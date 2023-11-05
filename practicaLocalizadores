@@ -1,0 +1,47 @@
+package SeleniumPractica1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SeleniumPractica1 {
+
+public static void main(String[] args) throws InterruptedException {
+// TODO Auto-generated method stub
+String exe_Path="./driver/chromedriver.exe";
+System.setProperty("webdriver.chrome.driver", exe_Path);
+
+WebDriver driver= (WebDriver) new ChromeDriver();
+driver.get("https://google.com");
+
+
+//pantalla completa windows
+driver.manage().window().maximize();
+
+// driver.findElement(By.id("APjFqb")); --ejemplo de buscar un ID
+
+//driver.get("https://www.selenium.dev");
+driver.get("https://demoqa.com/text-box");
+
+driver.manage().window().maximize();//maximizar explorador
+
+
+WebElement username = driver.findElement(By.xpath("//input[@id='userName']"));
+username.sendKeys("Mariel Atahuichi");
+Thread.sleep(2000);
+//username.clear();
+
+WebElement email = driver.findElement(By.xpath("//input[@id='userEmail']"));
+email.sendKeys("gatahuichi@bancounion.com.bo");
+Thread.sleep(2000);
+
+WebElement current = driver.findElement(By.xpath("//textarea[@id='currentAddress']"));
+current.sendKeys("Calle 1");
+Thread.sleep(2000);
+
+WebElement permanent = driver.findElement(By.xpath("//textarea[@id='permanentAddress']"));
+permanent.sendKeys("av. 8 de Mayo");
+Thread.sleep(9000);
+
+
